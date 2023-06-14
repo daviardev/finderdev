@@ -1,3 +1,80 @@
+:root {
+    --text-color: #adbac7;
+    --background-color: #22272e;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+[role=button], button {
+    cursor: pointer;
+}
+
+[type=button], [type=reset], [type=submit], button {
+    -webkit-appearance: button;
+    background-color: transparent;
+    background-image: none;
+}
+button, select {
+    text-transform: none;
+}
+button, input, optgroup, select, textarea {
+    font-family: inherit;
+    font-size: 100%;
+    font-weight: inherit;
+    line-height: inherit;
+    border: 0;
+    color: inherit;
+    padding: 0;
+    margin: 0;
+    margin-right: calc(0.5rem * 0);
+    margin-left: calc(0.5rem * calc(1 - 0));
+}
+
+html,
+body {
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.container {
+    display: grid;
+    min-height: 100vh;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    place-content: center;
+    background-color: var(--background-color);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2.5rem;
+}
+
+.title {
+    color: var(--text-color);
+    font-weight: 700;
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    flex-grow: 1;
+}
+
+.theme {
+    color: var(--text-color);
+    text-transform: uppercase;
+}
+
 .grid-areas {
     display: grid;
     grid-template-columns: 1fr 2fr 2fr;
@@ -40,5 +117,23 @@
             'a d d d'
             'a e e e'
             'a f f f';
+    }
+}
+
+@media (min-width: 1024px) {
+    .breakpoints {
+        width: 700px;
+    }
+}
+
+@media (min-width: 768px) {
+    .breakpoints {
+        width: 600px;
+    }
+}
+
+@media (min-wdith: 640px) {
+    .breakpoints {
+        width: 500px;
     }
 }
