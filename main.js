@@ -1,6 +1,7 @@
 import './style.css'
 
 import { $ } from './src/lib/dom'
+import { options } from './src/lib/format-date'
 
 $('#app')
 
@@ -21,7 +22,7 @@ form.addEventListener('submit', e => {
   getUser(username)
 })
 
-// Query GitHun Api username
+// Query GitHub Api username
 const getUser = async username => {
   try {
     const res = await fetch(`https://api.github.com/users/${username}`)
@@ -53,7 +54,7 @@ const showUserData = data => {
       <p>@${login}</p>
     </div>
     <p class='section-date date'>
-      ${joined}
+      ${parseDate(joined)}
     </p>
     <p class='section-description description'>
       ${bio}
@@ -106,4 +107,8 @@ const showUserData = data => {
 `
 
   infoUser.innerHTML = userData
+
+  function parseDate (date) {
+    return new Date(date).toLocaleString('es-CO', options)
+  }
 }
