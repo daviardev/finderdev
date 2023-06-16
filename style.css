@@ -199,9 +199,12 @@ body {
     display: flex;
 }
 
-.trucate {
-    white-space: nowrap;
-    text-overflow: ellipsis;
+.error {
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    background-color: #f85454;
+    border-radius: var(--content-space);
 }
 
 .grid-areas {

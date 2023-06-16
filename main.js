@@ -22,6 +22,13 @@ form.addEventListener('submit', e => {
   getUser(username)
 })
 
+function Error () {
+  const error = `
+   <div class='error'>User not found</div>
+   `
+  infoUser.innerHTML = error
+}
+
 // Query GitHub Api username
 const getUser = async username => {
   try {
@@ -32,7 +39,7 @@ const getUser = async username => {
     showUserData(data)
   } catch (err) {
     console.error(err)
-    return null
+    Error()
   }
 }
 
