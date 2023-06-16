@@ -1,9 +1,25 @@
 :root {
-    --text-color: #adbac7;
-    --background-color: #22272e;
-    --content-color: #2d333b;
     --box-radius-content: .75rem;
     --content-space: .5rem;
+}
+
+/* Ligth and dark mode */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text-color: #adbac7;
+        --shadow-image: #cdd9e51a;
+        --content-color: #2d333b;
+        --background-color: #22272e;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --text-color: #1F2328;
+        --content-color: #f6f8fa;
+        --shadow-image: #0606061a;
+        --background-color: #ffffff;
+    }
 }
 
 * {
@@ -105,7 +121,7 @@ body {
 }
 
 .input-form {
-    color: #cdd9e5;
+    color: var(--text-color);
     padding: var(--content-space);
     border-radius: var(--content-space);
     flex: 1 1 0%;
@@ -153,7 +169,7 @@ body {
     overflow: hidden;
     place-content: center;
     border-radius: 9999px;
-    background-color: #cdd9e51a;
+    background-color: var(--shadow-image);
 }
 
 .logo-content > img {
